@@ -16,9 +16,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-   contents = message.content.split(" ") #contents is a list type
-    for word in contents:
-        if word.upper() in chat_filter:
-            await client.send_message(message.channel, "**Hey!** You're not allowed to use that word here!")
+    if message.content.upper().startswith('arina'):
+        await client.send_message(message.channel, "<@%s> , I am not mafia maybe YOU!" % (userID))
 
 client.run("NDY3NzM0MTc0NjI4MDUzMDI2.Di3fdg.O_hg2m8pEdY5w87L-B6QdN__gDQ") #Replace token with your bots token
