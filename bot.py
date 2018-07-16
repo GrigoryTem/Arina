@@ -18,4 +18,4 @@ async def on_message(message):
     if message.content == "cookie":
         await client.send_message(message.channel, ":cookie:") #responds with Cookie emoji when someone says "cookie"
 
-client.run("token") #Replace token with your bots token
+client.run("NDY3NzM0MTc0NjI4MDUzMDI2.Di3fdg.O_hg2m8pEdY5w87L-B6QdN__gDQ") #Replace token with your bots token
