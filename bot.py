@@ -8,6 +8,7 @@ import time
 Client = discord.Client() #Initialise Client 
 client = commands.Bot(command_prefix = "?") #Initialise client bot
 
+chat_filter = ["PINEAPPLE", "APPLE", "CHROME"]
 
 @client.event 
 async def on_ready():
@@ -15,7 +16,9 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content == "cookie":
-        await client.send_message(message.channel, "Hello :)") #responds with Cookie emoji when someone says "cookie"
+   contents = message.content.split(" ") #contents is a list type
+    for word in contents:
+        if word.upper() in chat_filter:
+            await client.send_message(message.channel, "**Hey!** You're not allowed to use that word here!")
 
 client.run("NDY3NzM0MTc0NjI4MDUzMDI2.Di3fdg.O_hg2m8pEdY5w87L-B6QdN__gDQ") #Replace token with your bots token
