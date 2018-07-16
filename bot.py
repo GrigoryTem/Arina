@@ -14,7 +14,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content == "arina":
+    if message.content.upper().startswith('arina'):
         await client.send_message(message.channel, ":cookie:")
 
 client.run("NDY3NzM0MTc0NjI4MDUzMDI2.Di3fdg.O_hg2m8pEdY5w87L-B6QdN__gDQ") #Replace token with your bots token
