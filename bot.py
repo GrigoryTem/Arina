@@ -18,5 +18,7 @@ async def on_message(message):
         await client.send_message(message.channel, "hello, type help")
     if message.content == "help":
         await client.send_message(message.channel, "mafia - I can choose victim\nmaniac - hm what is victim?")
+    if message.content == "mafia":
+        await client.send_message(message.channel, "I dont care")
 
 client.run("NDY3NzM0MTc0NjI4MDUzMDI2.Di3fdg.O_hg2m8pEdY5w87L-B6QdN__gDQ") #Replace token with your bots token
