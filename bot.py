@@ -9,14 +9,18 @@ import time
 Client = discord.Client() #Initialise Client 
 client = commands.Bot(command_prefix = "?") #Initialise client bot
 
+greetings = ["hey", "hi", "hello"]
+
 @client.event 
 async def on_ready():
     print("Bot is online and connected to Discord") #This will be called when the bot connects to the server
 
 @client.event
 async def on_message(message):
-    if message.content == "Hi":
-        await client.send_message(message.channel, "hello, type help")
+    contents = message.content.split(" ") #contents is a list type
+    for word in contents:
+        if word.upper() in greetings:
+            await client.send_message(message.channel, "I dont care")
     if message.content == "help":
         await client.send_message(message.channel, "mafia - I can choose victim\nmaniac - hm what is victim?")
     if message.content == "mafia":
