@@ -22,6 +22,6 @@ async def on_message(message):
     if message.content == "mafia":
         await client.send_message(message.channel, "I dont care")
     if "Voting" in message.content:
-        await client.send_message(message.channel, random.choice["Akbar", "Fox", "Marcus", "Grigory"])
+        await client.send_message(message.channel, random.choice(["Akbar", "Fox", "Marcus", "Grigory"]))
 
 client.run("NDY3NzM0MTc0NjI4MDUzMDI2.Di3fdg.O_hg2m8pEdY5w87L-B6QdN__gDQ") #Replace token with your bots token
