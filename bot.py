@@ -17,6 +17,11 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    if message.author == client.user:
+        return
+    for word in greetings:
+        if word.upper():
+            await client.send_message(message.channel, "I dont care")
     if message.content == "help":
         await client.send_message(message.channel, "mafia - I can choose victim\nmaniac - hm what is victim?")
     if message.content == "mafia":
